@@ -1,0 +1,18 @@
+@import "../../../assets/scss/setup/vars";
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 35vw;
+  padding-block: 1em;
+  border-radius: 2em;
+
+  background-color: $contact-bg-clr;
+  cursor: pointer;
+
+  .contact-name {
+    font-size: 1.8em;
+  }
+}

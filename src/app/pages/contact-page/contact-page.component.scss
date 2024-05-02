@@ -1,0 +1,11 @@
+@import "../../../assets/scss/setup/vars";
+
+.contact-page {
+  background-color: $contact-page-bg-clr;
+  padding-block: 3rem;
+
+  .main-heading {
+    font-size: 2.4em;
+    margin-block-end: 1.5rem;
+  }
+}

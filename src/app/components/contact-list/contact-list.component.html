@@ -1,0 +1,7 @@
+<section class="contact-list flex column">
+  <!-- <pet-preview (remove)="remove.emit($event)" *ngFor="let pet of pets" [pet]="pet"></pet-preview> -->
+  <contact-preview
+    *ngFor="let contact of contacts"
+    [contact]="contact"
+  ></contact-preview>
+</section>
