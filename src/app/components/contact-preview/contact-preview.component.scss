@@ -3,10 +3,11 @@
 :host {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 2em;
 
-  width: 35vw;
+  width: 30vw;
   padding-block: 1em;
+  padding-inline-start: 2em;
   border-radius: 2em;
 
   background-color: $contact-bg-clr;
@@ -14,5 +15,9 @@
 
   .contact-name {
     font-size: 1.8em;
+  }
+
+  .contact-img {
+    width: 30px;
   }
 }
