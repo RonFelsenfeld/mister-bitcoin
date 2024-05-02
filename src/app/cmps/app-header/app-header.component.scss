@@ -11,8 +11,15 @@
   .main-nav {
     .main-nav-list {
       gap: 1.5em;
+
       .nav-link {
         font-size: 1.6em;
+        cursor: pointer;
+
+        &.active {
+          font-weight: bold;
+          color: $active-link-clr;
+        }
       }
     }
   }

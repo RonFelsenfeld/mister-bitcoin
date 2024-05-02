@@ -3,7 +3,20 @@
 
   <nav class="main-nav">
     <ul class="main-nav-list clean-list flex align-center">
-      <li class="nav-link">Home</li>
+      <li
+        class="nav-link"
+        [class.active]="activeLink === 'home'"
+        (click)="onSetActiveLink('home')"
+      >
+        Home
+      </li>
+      <li
+        class="nav-link"
+        [class.active]="activeLink === 'contacts'"
+        (click)="onSetActiveLink('contacts')"
+      >
+        Contacts
+      </li>
     </ul>
   </nav>
 </header>
