@@ -1,0 +1,13 @@
+<section class="home-page">
+  <h3>
+    Full name: <span>{{ user.fullName }}</span>
+  </h3>
+
+  <p>
+    Balance: <span>{{ user.coins }}</span>
+  </p>
+
+  <p *ngIf="rate">
+    Bitcoin rate: <span>{{ rate }}</span>
+  </p>
+</section>
