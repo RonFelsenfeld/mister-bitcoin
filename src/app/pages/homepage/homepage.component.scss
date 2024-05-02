@@ -1,0 +1,24 @@
+@import "../../../assets/scss/setup/vars";
+
+.home-page {
+  background-color: $homepage-bg-clr;
+  height: calc(100dvh - $app-header-height);
+
+  .user-greet {
+    margin-block-end: 1em;
+    font-size: 2.4em;
+  }
+
+  p {
+    font-size: 1.8em;
+    font-weight: bold;
+
+    &.balance {
+      margin-block-end: 1rem;
+    }
+
+    > span {
+      font-weight: normal;
+    }
+  }
+}
