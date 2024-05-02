@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 
-import { UserService } from '../../../services/user-service.service';
-import { BitcoinService } from '../../../services/bitcoin.service';
-import { User } from '../../../models/user.model';
+import { UserService } from '../../services/user-service.service';
+import { BitcoinService } from '../../services/bitcoin.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'homepage',
