@@ -4,4 +4,14 @@
 .statistic-page {
   @include fullPage;
   background-color: $statistic-page-bg-clr;
+
+  .main-heading {
+    padding-block-start: 0.5em;
+    text-align: center;
+    font-size: 3.2em;
+  }
+
+  .charts-container {
+    justify-content: space-around;
+  }
 }
