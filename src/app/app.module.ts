@@ -11,6 +11,7 @@ import { ContactList } from './components/contact-list/contact-list.component';
 import { ContactPreview } from './components/contact-preview/contact-preview.component';
 import { ContactFilter } from './components/contact-filter/contact-filter.component';
 import { FormsModule } from '@angular/forms';
+import { ContactDetails } from './pages/contact-details/contact-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     ContactPage,
     ContactList,
     ContactPreview,
-    ContactFilter
+    ContactFilter,
+    ContactDetails,
   ],
   imports: [
     BrowserModule,

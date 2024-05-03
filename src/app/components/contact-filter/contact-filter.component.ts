@@ -10,7 +10,6 @@ import { ContactFilterBy } from '../../models/contact.model';
   styleUrl: './contact-filter.component.scss'
 })
 export class ContactFilter implements OnInit, OnDestroy {
-
   private contactService = inject(ContactService)
   private filterSubject$ = new Subject()
   private destroySubject$ = new Subject()

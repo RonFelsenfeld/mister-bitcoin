@@ -1,0 +1,30 @@
+<section class="contact-details">
+  <div *ngIf="selectedContact" class="contact-details">
+    <button (click)="onGoBack()" class="btn-go-back">
+      Back to contact list
+    </button>
+
+    <div class="main-details flex column align-center">
+      <h3 class="contact-name">{{ selectedContact.name }}</h3>
+      <p class="contact-phone">
+        Phone number: <span> {{ selectedContact.phone }}</span>
+      </p>
+      <p class="contact-email">
+        Email address:
+        <span>
+          {{ selectedContact.email }}
+        </span>
+      </p>
+
+      <img
+        src="https://robohash.org/{{ selectedContact._id }}?set=set4"
+        alt="Contact picture"
+        class="contact-img"
+      />
+    </div>
+  </div>
+
+  <span *ngIf="!selectedContact" class="loading-msg"
+    >Loading contact details...</span
+  >
+</section>

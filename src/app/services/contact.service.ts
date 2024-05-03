@@ -41,10 +41,10 @@ export class ContactService {
             )
     }
 
-    // public getContactById(id: string): Observable<Contact> {
-    //     return from(storageService.get(ENTITY, id))
-    //         .pipe(catchError(err => throwError(() => `Contact id ${id} not found! ${err}`)))
-    // }
+    public getContactById(id: string): Observable<Contact> {
+        return from(storageService.get<Contact>(ENTITY, id))
+            .pipe(catchError(err => throwError(() => `Contact id ${id} not found! ${err}`)))
+    }
 
     public deleteContact(id: string) {
         return from(storageService.remove(ENTITY, id))

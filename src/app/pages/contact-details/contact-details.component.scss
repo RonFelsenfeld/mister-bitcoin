@@ -1,0 +1,34 @@
+@import "../../../assets/scss/setup/vars";
+
+.contact-details {
+  .btn-go-back {
+    padding: 0.8em 1.6em;
+    border-radius: 2em;
+    margin-inline-start: 3em;
+
+    font-size: 1.6em;
+    background-color: $btn-go-back-clr;
+
+    &:hover {
+      background-color: darken($btn-go-back-clr, 10%);
+    }
+  }
+
+  .main-details {
+    gap: 1em;
+    margin-block-end: 2em;
+
+    .contact-name {
+      font-size: 3.2em;
+    }
+
+    > *:not(.contact-name) {
+      font-size: 1.8em;
+    }
+  }
+
+  .loading-msg {
+    font-size: 2em;
+    margin-inline-start: 3em;
+  }
+}

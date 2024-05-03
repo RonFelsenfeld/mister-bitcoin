@@ -1,5 +1,19 @@
-<section class="contact-page flex column align-center">
-  <h1 class="main-heading">Your contacts</h1>
-  <contact-filter></contact-filter>
-  <contact-list [contacts]="contacts$ | async"></contact-list>
+<section class="contact-page">
+  <div
+    *ngIf="!selectedContactId"
+    class="main-contacts flex column align-center"
+  >
+    <h1 class="main-heading">Your contacts</h1>
+    <contact-filter></contact-filter>
+    <contact-list
+      (selectContact)="onSelectContact($event)"
+      [contacts]="contacts$ | async"
+    ></contact-list>
+  </div>
+
+  <contact-details
+    *ngIf="selectedContactId"
+    [contactId]="selectedContactId"
+    (goBack)="selectedContactId = null"
+  ></contact-details>
 </section>
