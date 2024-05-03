@@ -1,8 +1,9 @@
 @import "../../../assets/scss/setup/vars";
+@import "../../../assets/scss/setup/mixins";
 
 .home-page {
+  @include fullPage;
   background-color: $homepage-bg-clr;
-  height: calc(100dvh - $app-header-height);
 
   .user-greet {
     margin-block-end: 1em;

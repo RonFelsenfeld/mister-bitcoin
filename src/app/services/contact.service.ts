@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Observable, BehaviorSubject, throwError, from, tap, retry, catchError } from 'rxjs';
+import { Observable, BehaviorSubject, throwError, from, tap, retry, catchError, take, combineLatest } from 'rxjs';
 
 import { storageService } from './async-storage.service';
-import { Contact } from '../models/contact.model';
+import { Contact, ContactFilterBy } from '../models/contact.model';
 
 const ENTITY = 'contacts'
 
@@ -14,6 +14,9 @@ export class ContactService {
 
     private _contacts$ = new BehaviorSubject<Contact[]>([])
     public contacts$ = this._contacts$.asObservable()
+
+    private _filterBy$ = new BehaviorSubject<ContactFilterBy>({ term: '' })
+    public filterBy$ = this._filterBy$.asObservable()
 
     constructor() {
         // Handling Demo Data, fetching from storage || saving to storage 
@@ -27,11 +30,10 @@ export class ContactService {
         return from(storageService.query<Contact>(ENTITY))
             .pipe(
                 tap(contacts => {
-                    const filterBy = { term: '' }
+                    const filterBy = this._filterBy$.value
                     if (filterBy && filterBy.term) {
                         contacts = this._filter(contacts, filterBy.term)
                     }
-                    contacts = contacts.filter(contact => contact.name.toLowerCase().includes(filterBy.term.toLowerCase()))
                     this._contacts$.next(this._sort(contacts))
                 }),
                 retry(1),
@@ -67,6 +69,11 @@ export class ContactService {
             email: '',
             phone: ''
         }
+    }
+
+    public setFilter(filterBy: ContactFilterBy) {
+        this._filterBy$.next(filterBy)
+        this.loadContacts().pipe(take(1)).subscribe()
     }
 
     private _updateContact(contact: Contact) {
@@ -106,12 +113,13 @@ export class ContactService {
     }
 
     private _filter(contacts: Contact[], term: string) {
-        term = term.toLocaleLowerCase()
-        return contacts.filter(contact => {
-            return contact.name.toLocaleLowerCase().includes(term) ||
-                contact.phone.toLocaleLowerCase().includes(term) ||
-                contact.email.toLocaleLowerCase().includes(term)
+        const regex = new RegExp(term, 'i')
+
+        const filteredContacts: Contact[] = contacts.filter(contact => {
+            return regex.test(contact.name) || regex.test(contact.phone) || regex.test(contact.email)
         })
+
+        return filteredContacts
     }
 
     private _createContacts() {
@@ -250,3 +258,4 @@ function _getRandomId(length = 8): string {
     }
     return result;
 }
+

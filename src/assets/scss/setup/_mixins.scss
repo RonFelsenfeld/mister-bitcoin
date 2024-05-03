@@ -1,23 +1,5 @@
-@mixin for-normal-layout {
-  @media (max-width: $break-normal) {
-    @content;
-  }
-}
+@import "../../../assets/scss/setup/vars";
 
-@mixin for-narrow-layout {
-  @media (max-width: $break-narrow) {
-    @content;
-  }
-}
-
-@mixin for-small-layout {
-  @media (max-width: $break-small) {
-    @content;
-  }
-}
-
-@mixin for-mobile-layout {
-  @media (max-width: $break-mobile) {
-    @content;
-  }
+@mixin fullPage {
+  min-height: calc(100dvh - $app-header-height);
 }
