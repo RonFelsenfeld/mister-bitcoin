@@ -12,7 +12,7 @@ import { Contact } from '../../models/contact.model';
 export class ContactPage {
   private contactService = inject(ContactService)
   contacts$!: Observable<Contact[]>
-  selectedContactId: string | null = '5a566402abce24c6bfe4699d'
+  selectedContactId: string | null = null
 
   ngOnInit(): void {
     this.contacts$ = this.contactService.contacts$

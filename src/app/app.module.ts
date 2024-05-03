@@ -12,6 +12,7 @@ import { ContactPreview } from './components/contact-preview/contact-preview.com
 import { ContactFilter } from './components/contact-filter/contact-filter.component';
 import { FormsModule } from '@angular/forms';
 import { ContactDetails } from './pages/contact-details/contact-details.component';
+import { StatisticPage } from './pages/statistic-page/statistic-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ContactDetails } from './pages/contact-details/contact-details.componen
     ContactPreview,
     ContactFilter,
     ContactDetails,
+    StatisticPage,
   ],
   imports: [
     BrowserModule,

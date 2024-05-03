@@ -16,7 +16,6 @@
 
   .main-details {
     gap: 1em;
-    margin-block-end: 2em;
 
     .contact-name {
       font-size: 3.2em;
@@ -24,6 +23,10 @@
 
     > *:not(.contact-name) {
       font-size: 1.8em;
+    }
+
+    .contact-img {
+      margin-block-start: 1.5em;
     }
   }
 

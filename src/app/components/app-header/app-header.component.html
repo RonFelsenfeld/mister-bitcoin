@@ -17,6 +17,14 @@
       >
         Contacts
       </li>
+
+      <li
+        class="nav-link"
+        [class.active]="activeLink === 'statistic'"
+        (click)="onSetActiveLink('statistic')"
+      >
+        Statistics
+      </li>
     </ul>
   </nav>
 </header>

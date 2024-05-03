@@ -1,0 +1,7 @@
+@import "../../../assets/scss/setup/mixins";
+@import "../../../assets/scss/setup/vars";
+
+.statistic-page {
+  @include fullPage;
+  background-color: $statistic-page-bg-clr;
+}

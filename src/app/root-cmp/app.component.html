@@ -2,4 +2,5 @@
   <app-header (changeView)="setActiveView($event)"></app-header>
   <homepage *ngIf="activeView === 'home'"></homepage>
   <contact-page *ngIf="activeView === 'contacts'"></contact-page>
+  <statistic-page *ngIf="activeView === 'statistic'"></statistic-page>
 </main>
