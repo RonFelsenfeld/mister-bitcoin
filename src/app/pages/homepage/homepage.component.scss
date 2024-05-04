@@ -4,22 +4,28 @@
 .home-page {
   @include fullPage;
   background-color: $homepage-bg-clr;
+  justify-content: space-around;
 
   .user-greet {
     margin-block-end: 1em;
-    font-size: 2.4em;
+    font-size: 3.6em;
   }
 
   p {
-    font-size: 1.8em;
-    font-weight: bold;
+    font-size: 2.4em;
+    font-family: FigtreeBold;
 
     &.balance {
       margin-block-end: 1rem;
     }
 
     > span {
-      font-weight: normal;
+      font-family: $main-font-family;
     }
+  }
+
+  .hero-img {
+    width: 50vw;
+    object-fit: contain;
   }
 }

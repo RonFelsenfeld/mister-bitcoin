@@ -9,7 +9,7 @@ import { ContactService } from '../services/contact.service';
 })
 export class AppComponent implements OnInit {
   private contactService = inject(ContactService)
-  activeView = 'statistic'
+  activeView = 'home'
 
   ngOnInit(): void {
     this.contactService.loadContacts()
