@@ -1,5 +1,8 @@
 <ul class="contact-list flex column clean-list">
-  <li *ngFor="let contact of contacts" (click)="onSelectContact(contact._id)">
-    <contact-preview [contact]="contact"></contact-preview>
+  <li *ngFor="let contact of contacts">
+    <contact-preview
+      routerLink="/contact/{{ contact._id }}"
+      [contact]="contact"
+    ></contact-preview>
   </li>
 </ul>

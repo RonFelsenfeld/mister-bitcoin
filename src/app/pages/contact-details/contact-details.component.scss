@@ -1,10 +1,15 @@
 @import "../../../assets/scss/setup/vars";
+@import "../../../assets/scss/setup/mixins";
 
 .contact-details {
+  @include fullPage;
+  background-color: $contact-page-bg-clr;
+
   .btn-go-back {
     padding: 0.8em 1.6em;
     border-radius: 2em;
     margin-inline-start: 3em;
+    margin-block: 1em;
 
     font-size: 1.6em;
     background-color: $btn-go-back-clr;
@@ -28,10 +33,5 @@
     .contact-img {
       margin-block-start: 1.5em;
     }
-  }
-
-  .loading-msg {
-    font-size: 2em;
-    margin-inline-start: 3em;
   }
 }

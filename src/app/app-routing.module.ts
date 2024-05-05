@@ -5,11 +5,12 @@ import { Homepage } from './pages/homepage/homepage.component';
 import { ContactPage } from './pages/contact-page/contact-page.component';
 import { StatisticPage } from './pages/statistic-page/statistic-page.component';
 import { ContactDetails } from './pages/contact-details/contact-details.component';
+import { contactResolver } from './resolvers/contact.resolver';
 
 const routes: Routes = [
   { path: 'home', component: Homepage },
   { path: 'contact', component: ContactPage },
-  { path: 'contact/:id', component: ContactDetails },
+  { path: 'contact/:contactId', component: ContactDetails, resolve: { contact: contactResolver } },
   { path: 'statistics', component: StatisticPage },
   { path: '**', redirectTo: '/home' },
 ];
