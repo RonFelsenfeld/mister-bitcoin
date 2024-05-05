@@ -1,6 +1,7 @@
-<main class="main-app">
-  <app-header (changeView)="setActiveView($event)"></app-header>
-  <homepage *ngIf="activeView === 'home'"></homepage>
-  <contact-page *ngIf="activeView === 'contacts'"></contact-page>
-  <statistic-page *ngIf="activeView === 'statistic'"></statistic-page>
-</main>
+<section class="main-app">
+  <app-header></app-header>
+
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</section>

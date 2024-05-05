@@ -9,7 +9,6 @@ import { ContactService } from '../services/contact.service';
 })
 export class AppComponent implements OnInit {
   private contactService = inject(ContactService)
-  activeView = 'home'
 
   ngOnInit(): void {
     this.contactService.loadContacts()
@@ -19,7 +18,4 @@ export class AppComponent implements OnInit {
       })
   }
 
-  setActiveView(view: string): void {
-    this.activeView = view
-  }
 }

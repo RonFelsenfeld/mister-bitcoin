@@ -13,5 +13,9 @@
 
   .charts-container {
     justify-content: space-around;
+
+    @include for-normal-layout {
+      flex-direction: column;
+    }
   }
 }

@@ -1,11 +1,12 @@
 @import "../../../assets/scss/setup/vars";
+@import "../../../assets/scss/setup/mixins";
 
 :host {
   display: flex;
   align-items: center;
   gap: 2em;
 
-  width: 30vw;
+  width: 60vw;
   padding-block: 1em;
   padding-inline-start: 2em;
   border-radius: 2em;

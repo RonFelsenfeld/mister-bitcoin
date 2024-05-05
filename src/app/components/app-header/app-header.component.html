@@ -3,26 +3,13 @@
 
   <nav class="main-nav">
     <ul class="main-nav-list clean-list flex align-center">
-      <li
-        class="nav-link"
-        [class.active]="activeLink === 'home'"
-        (click)="onSetActiveLink('home')"
-      >
+      <li routerLink="/home" routerLinkActive="active" class="nav-link">
         Home
       </li>
-      <li
-        class="nav-link"
-        [class.active]="activeLink === 'contacts'"
-        (click)="onSetActiveLink('contacts')"
-      >
+      <li routerLink="/contact" routerLinkActive="active" class="nav-link">
         Contacts
       </li>
-
-      <li
-        class="nav-link"
-        [class.active]="activeLink === 'statistic'"
-        (click)="onSetActiveLink('statistic')"
-      >
+      <li routerLink="/statistics" routerLinkActive="active" class="nav-link">
         Statistics
       </li>
     </ul>

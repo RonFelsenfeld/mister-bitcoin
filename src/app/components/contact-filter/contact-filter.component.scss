@@ -1,3 +1,5 @@
+@import "../../../assets/scss/setup/mixins";
+
 .contact-filter {
   margin-block-end: 2em;
 
@@ -9,5 +11,9 @@
     border-radius: 16px;
 
     font-size: 1.6em;
+
+    @include for-normal-layout {
+      width: 60vw;
+    }
   }
 }
