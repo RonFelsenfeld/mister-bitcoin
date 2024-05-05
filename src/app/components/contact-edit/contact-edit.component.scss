@@ -39,14 +39,26 @@
       border-radius: 16px;
       font-size: 1.6em;
 
-      &.btn-submit {
-        font-family: FigtreeBold, sans-serif;
-        background-color: $active-link-clr;
-        color: $main-bg-clr;
+      &.btn-action {
+        &.btn-submit {
+          font-family: FigtreeBold, sans-serif;
+          background-color: $active-link-clr;
+          color: $main-bg-clr;
 
-        &:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
+          &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+          }
+        }
+
+        &.btn-delete-contact {
+          background-color: $btn-delete-clr;
+          color: $main-bg-clr;
+
+          &::after {
+            font-family: faSolid;
+            content: "\f1f8";
+          }
         }
       }
     }

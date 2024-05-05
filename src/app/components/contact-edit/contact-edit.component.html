@@ -45,8 +45,18 @@
     </div>
 
     <section class="actions-container flex justify-center">
-      <button routerLink="/contact" class="btn" type="button">Back</button>
-      <button class="btn btn-submit" [disabled]="editForm.invalid">Save</button>
+      <button routerLink="/contact/{{ contact._id }}" class="btn" type="button">
+        Back
+      </button>
+      <button
+        *ngIf="contact._id"
+        class="btn btn-action btn-delete-contact"
+        type="button"
+        (click)="onRemoveContact(contact._id)"
+      ></button>
+      <button class="btn btn-action btn-submit" [disabled]="editForm.invalid">
+        Save
+      </button>
     </section>
   </form>
 </section>

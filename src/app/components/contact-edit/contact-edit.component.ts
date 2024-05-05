@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, map } from 'rxjs';
+import { filter, map, take } from 'rxjs';
 
 import { ContactService } from '../../services/contact.service';
 import { Contact } from '../../models/contact.model';
@@ -29,6 +29,15 @@ export class ContactEdit implements OnInit {
 
   onSaveContact() {
     this.contactService.saveContact(this.contact as Contact)
+      .subscribe({
+        next: () => this.router.navigateByUrl('/contact'),
+        error: err => console.log('err:', err)
+      })
+  }
+
+  onRemoveContact(contactId: string) {
+    this.contactService.deleteContact(contactId)
+      .pipe(take(1))
       .subscribe({
         next: () => this.router.navigateByUrl('/contact'),
         error: err => console.log('err:', err)

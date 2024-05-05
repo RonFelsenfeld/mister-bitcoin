@@ -4,19 +4,19 @@
 .contact-filter {
   margin-block-end: 2em;
   gap: 1em;
+  position: relative;
 
   .filter-input {
     @include input;
-    width: 30vw;
+    width: 60vw;
     border-radius: 16px;
-
-    @include for-normal-layout {
-      width: 60vw;
-    }
   }
 
   .btn-add-contact {
-    padding: 1em;
+    position: absolute;
+    right: -4em;
+    height: 100%;
+    padding-inline: 1em;
     border-radius: 16px;
     background-color: $active-link-clr;
 

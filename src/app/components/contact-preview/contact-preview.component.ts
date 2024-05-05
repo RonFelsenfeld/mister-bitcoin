@@ -1,4 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
+import { take } from 'rxjs';
+
+import { ContactService } from '../../services/contact.service';
 import { Contact } from '../../models/contact.model';
 
 @Component({
@@ -8,4 +11,16 @@ import { Contact } from '../../models/contact.model';
 })
 export class ContactPreview {
   @Input() contact!: Contact
+  private contactService = inject(ContactService)
+
+
+  onRemoveContact(ev: MouseEvent, contactId: string) {
+    ev.stopPropagation()
+
+    this.contactService.deleteContact(contactId)
+      .pipe(take(1))
+      .subscribe({
+        error: err => console.log('err:', err)
+      })
+  }
 }
