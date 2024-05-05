@@ -6,6 +6,10 @@
 
   .main-heading {
     font-size: 2.8em;
+
+    span {
+      color: $active-link-clr;
+    }
   }
 
   .main-nav {

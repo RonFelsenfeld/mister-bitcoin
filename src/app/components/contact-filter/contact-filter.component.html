@@ -1,4 +1,4 @@
-<section class="contact-filter">
+<section class="contact-filter flex">
   <input
     name="term"
     type="text"
@@ -7,4 +7,6 @@
     [(ngModel)]="filterBy.term"
     (ngModelChange)="onSetFilter($event)"
   />
+
+  <button routerLink="/contact/edit" class="btn-add-contact"></button>
 </section>

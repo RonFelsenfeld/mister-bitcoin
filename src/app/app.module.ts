@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AgChartsAngular } from 'ag-charts-angular';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,7 @@ import { ContactList } from './components/contact-list/contact-list.component';
 import { ContactPreview } from './components/contact-preview/contact-preview.component';
 import { ContactFilter } from './components/contact-filter/contact-filter.component';
 import { Chart } from './components/chart/chart.component';
+import { ContactEdit } from './components/contact-edit/contact-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,14 @@ import { Chart } from './components/chart/chart.component';
     ContactDetails,
     StatisticPage,
     Chart,
+    ContactEdit,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    AgChartsAngular
+    AgChartsAngular,
   ],
   providers: [],
   bootstrap: [AppComponent]
