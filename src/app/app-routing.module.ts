@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'home', component: Homepage },
   { path: 'contact', component: ContactPage },
   { path: 'contact/edit', component: ContactEdit },
-  { path: 'contact/edit/contactId', component: ContactEdit, resolve: { contact: contactResolver } },
+  { path: 'contact/edit/:contactId', component: ContactEdit, resolve: { contact: contactResolver } },
   { path: 'contact/:contactId', component: ContactDetails, resolve: { contact: contactResolver } },
   { path: 'statistics', component: StatisticPage },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
