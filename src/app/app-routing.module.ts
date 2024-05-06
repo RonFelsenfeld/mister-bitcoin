@@ -7,6 +7,8 @@ import { Homepage } from './pages/homepage/homepage.component';
 import { ContactPage } from './pages/contact-page/contact-page.component';
 import { StatisticPage } from './pages/statistic-page/statistic-page.component';
 import { ContactDetails } from './pages/contact-details/contact-details.component';
+import { SignupPage } from './pages/signup-page/signup-page.component';
+
 import { ContactEdit } from './components/contact-edit/contact-edit.component';
 
 const routes: Routes = [
@@ -16,6 +18,7 @@ const routes: Routes = [
   { path: 'contact/edit/:contactId', component: ContactEdit, resolve: { contact: contactResolver } },
   { path: 'contact/:contactId', component: ContactDetails, resolve: { contact: contactResolver } },
   { path: 'statistics', component: StatisticPage },
+  { path: 'signup', component: SignupPage },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: '/home' },
 ];

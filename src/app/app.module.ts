@@ -19,6 +19,7 @@ import { ContactPreview } from './components/contact-preview/contact-preview.com
 import { ContactFilter } from './components/contact-filter/contact-filter.component';
 import { Chart } from './components/chart/chart.component';
 import { ContactEdit } from './components/contact-edit/contact-edit.component';
+import { SignupPage } from './pages/signup-page/signup-page.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ContactEdit } from './components/contact-edit/contact-edit.component';
     StatisticPage,
     Chart,
     ContactEdit,
+    SignupPage,
   ],
   imports: [
     BrowserModule,
