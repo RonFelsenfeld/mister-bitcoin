@@ -6,6 +6,7 @@ import { Contact } from '../models/contact.model';
 import { storageService } from './async-storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Move } from '../models/move.model';
 
 const ENTITY = 'users'
 const STORAGE_KEY_LOGGEDIN = 'loggedInUserDB'
@@ -58,7 +59,19 @@ export class UserService {
     this._setLoggedInUser(anonymousUser)
   }
 
-  public addMove(contact: Contact, amount: number) { }
+  public addMove(contact: Contact, amount: number) {
+    const moveToSave: Move = {
+      toId: contact._id,
+      to: contact.name,
+      at: Date.now(),
+      amount
+    }
+
+    this._loggedInUser.moves.push(moveToSave)
+    this._loggedInUser.coins -= amount
+
+    this._setLoggedInUser(this._loggedInUser)
+  }
 
   private _setLoggedInUser(user: User) {
     this._loggedInUser = user

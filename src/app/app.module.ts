@@ -20,6 +20,7 @@ import { ContactFilter } from './components/contact-filter/contact-filter.compon
 import { Chart } from './components/chart/chart.component';
 import { ContactEdit } from './components/contact-edit/contact-edit.component';
 import { SignupPage } from './pages/signup-page/signup-page.component';
+import { TransferFund } from './components/transfer-fund/transfer-fund.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SignupPage } from './pages/signup-page/signup-page.component';
     Chart,
     ContactEdit,
     SignupPage,
+    TransferFund,
   ],
   imports: [
     BrowserModule,
