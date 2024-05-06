@@ -1,0 +1,9 @@
+<section class="move-list-sections">
+  <h2 class="list-heading">{{ title }}</h2>
+
+  <ul class="move-list clean-list">
+    <li *ngFor="let move of moves">
+      <move-preview [move]="move"></move-preview>
+    </li>
+  </ul>
+</section>

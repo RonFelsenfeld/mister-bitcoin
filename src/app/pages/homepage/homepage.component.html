@@ -1,8 +1,12 @@
 <section class="home-page flex">
   <div class="flex column align-center justify-center">
-    <h3 class="user-greet">
-      Hello, <span>{{ user.fullName }}</span>
-    </h3>
+    <div class="user-container flex align-center">
+      <h3 class="user-greet">
+        Hello, <span>{{ user.fullName }}</span>
+      </h3>
+
+      <button class="btn-logout" (click)="onLogout()">Logout</button>
+    </div>
 
     <p class="balance">
       💰 Your balance: <span>{{ user.coins }}</span>
@@ -11,6 +15,12 @@
     <p *ngIf="rate" class="rate">
       📈 Current bitcoin rate: <span>{{ rate }}</span>
     </p>
+
+    <move-list
+      *ngIf="user.moves.length"
+      [moves]="user.moves"
+      title="Last Transactions:"
+    ></move-list>
   </div>
 
   <img src="/assets/img/hero-img.jpeg" alt="Bitcoins image" class="hero-img" />

@@ -11,9 +11,22 @@
     align-items: center;
   }
 
-  .user-greet {
-    margin-block-end: 1em;
-    font-size: 3.6em;
+  .user-container {
+    gap: 2em;
+    margin-block-end: 2em;
+
+    .user-greet {
+      font-size: 3.6em;
+    }
+
+    .btn-logout {
+      padding: 0.7em 1.4em;
+      border-radius: 8px;
+
+      font-family: FigtreeBold;
+      color: $main-bg-clr;
+      background-color: $active-link-clr;
+    }
   }
 
   p {

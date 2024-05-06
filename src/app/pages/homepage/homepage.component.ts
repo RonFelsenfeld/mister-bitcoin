@@ -1,9 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { UserService } from '../../services/user-service.service';
 import { BitcoinService } from '../../services/bitcoin.service';
 import { User } from '../../models/user.model';
-
 @Component({
   selector: 'homepage',
   templateUrl: './homepage.component.html',
@@ -12,6 +12,7 @@ import { User } from '../../models/user.model';
 export class Homepage implements OnInit {
   private userService = inject(UserService)
   private bitcoinService = inject(BitcoinService)
+  private router = inject(Router)
 
   user: User = this.userService.getUser()
   rate!: number
@@ -24,5 +25,10 @@ export class Homepage implements OnInit {
     catch (err) {
       console.log('Loading rate -> Had issues loading rate:', err)
     }
+  }
+
+  onLogout() {
+    this.userService.logout()
+    this.router.navigateByUrl('/signup')
   }
 }

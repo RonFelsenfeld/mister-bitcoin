@@ -10,9 +10,8 @@ import { Contact } from '../../models/contact.model';
   styleUrl: './contact-preview.component.scss'
 })
 export class ContactPreview {
-  @Input() contact!: Contact
   private contactService = inject(ContactService)
-
+  @Input() contact!: Contact
 
   onRemoveContact(ev: MouseEvent, contactId: string) {
     ev.stopPropagation()
