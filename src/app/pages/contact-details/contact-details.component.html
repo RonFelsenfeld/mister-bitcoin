@@ -34,7 +34,10 @@
     </div>
 
     <div class="funds-container flex column align-center">
-      <transfer-fund [contact]="contact"></transfer-fund>
+      <transfer-fund
+        (addMove)="onAddMove($event)"
+        [contact]="contact"
+      ></transfer-fund>
 
       <move-list
         [moves]="user.moves | filterArr : 'toId' : contact._id"
