@@ -10,14 +10,15 @@ import { ContactDetails } from './pages/contact-details/contact-details.componen
 import { SignupPage } from './pages/signup-page/signup-page.component';
 
 import { ContactEdit } from './components/contact-edit/contact-edit.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  { path: 'home', component: Homepage },
-  { path: 'contact', component: ContactPage },
-  { path: 'contact/edit', component: ContactEdit },
-  { path: 'contact/edit/:contactId', component: ContactEdit, resolve: { contact: contactResolver } },
-  { path: 'contact/:contactId', component: ContactDetails, resolve: { contact: contactResolver } },
-  { path: 'statistics', component: StatisticPage },
+  { path: 'home', component: Homepage, canActivate: [authGuard] },
+  { path: 'contact', component: ContactPage, canActivate: [authGuard] },
+  { path: 'contact/edit', component: ContactEdit, canActivate: [authGuard] },
+  { path: 'contact/edit/:contactId', component: ContactEdit, canActivate: [authGuard], resolve: { contact: contactResolver } },
+  { path: 'contact/:contactId', component: ContactDetails, canActivate: [authGuard], resolve: { contact: contactResolver } },
+  { path: 'statistics', component: StatisticPage, canActivate: [authGuard] },
   { path: 'signup', component: SignupPage },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: '**', redirectTo: '/home' },
