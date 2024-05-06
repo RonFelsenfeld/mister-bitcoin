@@ -1,8 +1,8 @@
-<section class="move-list-sections">
+<section *ngIf="moves.length" class="move-list-section">
   <h2 class="list-heading">{{ title }}</h2>
 
-  <ul class="move-list clean-list">
-    <li *ngFor="let move of moves">
+  <ul class="move-list flex column clean-list">
+    <li *ngFor="let move of moves.reverse().slice(0, 3)">
       <move-preview [move]="move"></move-preview>
     </li>
   </ul>

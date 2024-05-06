@@ -23,6 +23,7 @@ import { ContactEdit } from './components/contact-edit/contact-edit.component';
 import { TransferFund } from './components/transfer-fund/transfer-fund.component';
 import { MoveList } from './components/move-list/move-list.component';
 import { MovePreview } from './components/move-preview/move-preview.component';
+import { FilterArrPipe } from './custom-pipes/filter-arr.pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { MovePreview } from './components/move-preview/move-preview.component';
     TransferFund,
     MoveList,
     MovePreview,
+    FilterArrPipe,
   ],
   imports: [
     BrowserModule,

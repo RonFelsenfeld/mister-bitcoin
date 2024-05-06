@@ -33,6 +33,13 @@
       />
     </div>
 
-    <transfer-fund [contact]="contact"></transfer-fund>
+    <div class="funds-container flex column align-center">
+      <transfer-fund [contact]="contact"></transfer-fund>
+
+      <move-list
+        [moves]="user.moves | filterArr : 'toId' : contact._id"
+        title="Your transfers to {{ contact.name }}"
+      ></move-list>
+    </div>
   </div>
 </section>

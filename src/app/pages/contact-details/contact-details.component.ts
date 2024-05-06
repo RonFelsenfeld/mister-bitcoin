@@ -1,18 +1,19 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable, map } from 'rxjs';
 
-import { ContactService } from '../../services/contact.service';
+import { UserService } from '../../services/user-service.service';
 import { Contact } from '../../models/contact.model';
+import { User } from '../../models/user.model';
 @Component({
   selector: 'contact-details',
   templateUrl: './contact-details.component.html',
   styleUrl: './contact-details.component.scss'
 })
 export class ContactDetails {
-  private contactService = inject(ContactService)
   private route = inject(ActivatedRoute)
-  private router = inject(Router)
+  private userService = inject(UserService)
 
   contact$: Observable<Contact> = this.route.data.pipe(map(data => data['contact']))
+  user: User = this.userService.getUser()
 }
