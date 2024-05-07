@@ -1,5 +1,5 @@
 <article class="move-preview flex column">
-  <h3 class="move-to">
+  <h3 *ngIf="!contact" class="move-to">
     To: <span>{{ move.to }}</span>
   </h3>
   <p>

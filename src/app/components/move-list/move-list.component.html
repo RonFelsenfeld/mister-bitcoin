@@ -3,7 +3,7 @@
 
   <ul class="move-list flex column clean-list">
     <li *ngFor="let move of moves.reverse().slice(0, 3)">
-      <move-preview [move]="move"></move-preview>
+      <move-preview [move]="move" [contact]="contact"></move-preview>
     </li>
   </ul>
 </section>

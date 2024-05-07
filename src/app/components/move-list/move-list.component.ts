@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Move } from '../../models/move.model';
+import { Contact } from '../../models/contact.model';
 
 @Component({
   selector: 'move-list',
@@ -9,4 +10,5 @@ import { Move } from '../../models/move.model';
 export class MoveList {
   @Input() moves!: Move[]
   @Input() title!: string
+  @Input() contact: Contact | null = null
 }

@@ -41,6 +41,7 @@
 
       <move-list
         [moves]="user.moves | filterArr : 'toId' : contact._id"
+        [contact]="contact"
         title="Your transfers to {{ contact.name }}"
       ></move-list>
     </div>
